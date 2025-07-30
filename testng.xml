@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="api.utilities.ExtentListenerClass"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="E:/Projects/RestAssured_Framework_Development">
+        <classes>
+<!--            <class name="api.testcases.UserTest">-->
+<!--                <methods>-->
+<!--                    <include name="testCreateUser"/>-->
+<!--                    <include name="testgetUser"/>-->
+<!--                    <include name="testUpdateUser"/>-->
+<!--                    <include name="testDeleteUser"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="api.testcases.UserTest2">
+                <methods>
+                    <include name="testCreateUser"/>
+                    <include name="testgetUser"/>
+                    <include name="testUpdateUser"/>
+                    <include name="testDeleteUser"/>
+                </methods>
+<!--            </class>-->
+<!--            <class name="api.testcases.UserTestDD">-->
+<!--                <methods>-->
+<!--                    <include name="testCreateUser"/>-->
+<!--                    <include name="testDeleteUser"/>-->
+<!--                </methods>-->
+            </class>
+        </classes>
+    </test>
+</suite>

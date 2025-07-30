@@ -1,6 +1,6 @@
 package api.testcases;
 
-import api.endpoints.userEndPoint;
+import api.endpoints.userEndPoint2;
 import api.payload.user;
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
@@ -11,8 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
-
-public class UserTest {
+public class UserTest2 {
 
     Faker faker;
     user userPayload;
@@ -31,11 +30,11 @@ public class UserTest {
         userPayload.setPassword(faker.internet().password(5, 10));
         userPayload.setPhone(faker.phoneNumber().cellPhone());
 
-        logger= LogManager.getLogger("UserTest");
+        logger= LogManager.getLogger("RestAssured_Framework_Development");
     }
     @Test(priority = 1)
     public void testCreateUser(){
-        Response response = userEndPoint.CreateUser(userPayload);
+        Response response = userEndPoint2.CreateUser(userPayload);
         System.out.println("CREATE USER ");
         //log response
         response.then().log().all();
@@ -46,7 +45,7 @@ public class UserTest {
     }
     @Test(priority = 2)
     public void testgetUser(){
-        Response response = userEndPoint.GetUser(this.userPayload.getUsername());
+        Response response = userEndPoint2.GetUser(this.userPayload.getUsername());
         System.out.println("GET USER DATA ");
         //log response
         response.then().log().all();
@@ -59,7 +58,7 @@ public class UserTest {
     @Test(priority = 3)
     public void testUpdateUser(){
         userPayload.setFirstName(faker.name().firstName());
-        Response response = userEndPoint.UpdateUser(this.userPayload.getUsername(),userPayload);
+        Response response = userEndPoint2.UpdateUser(this.userPayload.getUsername(),userPayload);
 
         System.out.println("UPDATE USER DATA");
         //log response
@@ -74,7 +73,7 @@ public class UserTest {
     @Test(priority = 4)
     public void testDeleteUser(){
 
-        Response response = userEndPoint.DeleteUser(this.userPayload.getUsername());
+        Response response = userEndPoint2.DeleteUser(this.userPayload.getUsername());
 
         System.out.println("DELETE USER DATA");
         //log response
