@@ -1,0 +1,5 @@
+.idea/ linguist-generated
+*.xml linguist-documentation
+*.json linguist-documentation
+*.md linguist-documentation
+src/ linguist-language=Java
